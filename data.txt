@@ -1,0 +1,5 @@
+1. Extended Public Key and mnemonic:{"xpub":"xpub6EsUSmvTr36SkgsdczTM3Q4dsVic2U6ciyCQjXEFn7CpMfLx4cbcMttpXNYJXrJoC2gnRK3PNjjgNjnMVhp1Me4w9ZzgvPjtVaM5a21UNuB","mnemonic":"poem any charge reject horn clock bone able work matrix helmet manage truth giant shove tongue beef mail decorate thing vehicle change offer rent"}
+
+2. public address: {"address":"0xf79501b2d3b2bb7dcb7b50e8fa4863d6417a43d7"}
+3. private key : { key: '0x65bfbc97f1bcb631aaf26f7d6424b9c568ea0dbd52bbb206d3da8d75e957f036' }
+4. {"balance":"0.05"}
