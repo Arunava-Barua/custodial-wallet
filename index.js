@@ -62,17 +62,78 @@ const YOUR_API_KEY_HERE = 'e9a659ea-1dfd-48bd-8c31-2c570ddc0f56';
 /* ----------------------------------------------------------------------- */
 
 // 4. Balance (0.05 SepEth available)
-// YOUR_address_PARAMETER
-const address = '0xf79501b2d3b2bb7dcb7b50e8fa4863d6417a43d7';
+
+// const address = '0xf79501b2d3b2bb7dcb7b50e8fa4863d6417a43d7';   // YOUR_address_PARAMETER
+// const resp = await fetch(
+//   `https://api.tatum.io/v3/ethereum/account/balance/${address}`,
+//   {
+//     method: 'GET',
+//     headers: {
+//       'x-api-key': YOUR_API_KEY_HERE
+//     }
+//   }
+// );
+
+// const data = await resp.text();
+// console.log(data);
+
+/* ----------------------------------------------------------------------- */
+
+// 5. Get transaction details
+//YOUR_hash_PARAMETER
+// const hash = '0x15a360c2b92bf8fa2cba7329010c3e9b419faed0e987046b04d24e7dcefe5d13';
+// const resp = await fetch(
+//   `https://api.tatum.io/v3/ethereum/transaction/${hash}`,
+//   {
+//     method: 'GET',
+//     headers: {
+//       'x-api-key': YOUR_API_KEY_HERE
+//     }
+//   }
+// );
+
+// const data = await resp.text();
+// console.log(data);
+
+/* ----------------------------------------------------------------------- */
+
+//6. Show all transactions associated with an address
+// const query = new URLSearchParams({pageSize: '10'}).toString();
+
+// const address = '0xf79501b2d3b2bb7dcb7b50e8fa4863d6417a43d7';       //YOUR_address_PARAMETER
+// const resp = await fetch(
+//   `https://api.tatum.io/v3/ethereum/account/transaction/${address}?${query}`,
+//   {
+//     method: 'GET',
+//     headers: {
+//       'x-api-key': YOUR_API_KEY_HERE
+//     }
+//   }
+// );
+
+// const data = await resp.text();
+// console.log(data);
+
+/* ----------------------------------------------------------------------- */
+
+//7.
+
 const resp = await fetch(
-  `https://api.tatum.io/v3/ethereum/account/balance/${address}`,
+  `https://api.tatum.io/v3/ethereum/transaction`,
   {
-    method: 'GET',
+    method: 'POST',
     headers: {
+      'Content-Type': 'application/json',
       'x-api-key': YOUR_API_KEY_HERE
-    }
+    },
+    body: JSON.stringify({
+      to: '0xf79501b2d3b2bb7dcb7b50e8fa4863d6417a43d7',     // public address
+      currency: 'ETH',
+      amount: '100000',
+      fromPrivateKey: '0x05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2'
+    })
   }
 );
 
-const data = await resp.text();
+const data = await resp.json();
 console.log(data);
